@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y python3 \
 # Install Python Packages
 RUN pip install matplotlib \
     numpy \
+    scikit-learn \
     pandas
 
 # Set Labels
