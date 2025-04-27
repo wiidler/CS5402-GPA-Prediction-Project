@@ -100,4 +100,4 @@ if __name__ == "__main__":
                    verticalalignment='top', horizontalalignment='left', bbox=textbox_props)
 
     plt.tight_layout()
-    plt.savefig('logistic_regression_results.png')
+    plt.savefig('results/logistic_regression_results.png')

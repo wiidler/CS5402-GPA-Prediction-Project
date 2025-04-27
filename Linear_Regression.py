@@ -88,4 +88,4 @@ if __name__ == "__main__":
                    verticalalignment='top', horizontalalignment='left', bbox=textbox_props)
 
     plt.tight_layout()
-    plt.savefig('linear_regression_results.png')
+    plt.savefig('results/linear_regression_results.png')
