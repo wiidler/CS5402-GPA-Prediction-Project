@@ -78,7 +78,7 @@ if __name__ == "__main__":
     models_info = [
         (axs[0], linear_predictions_sorted, linear_labels_sorted, 'Linear Regression', True),
         (axs[1], logistic_probs_sorted, logistic_labels_sorted, 'Logistic Regression', True),
-        (axs[2], svm_labels_sorted, svm_labels_sorted, 'SVM (Pass/Fail)', False)
+        (axs[2], svm_scores_sorted, svm_labels_sorted, 'SVM (Raw Scores)', True)
     ]
 
     for ax, model_output, model_labels, title, is_continuous in models_info:
