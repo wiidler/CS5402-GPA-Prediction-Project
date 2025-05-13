@@ -222,7 +222,6 @@ if __name__ == "__main__":
 
     plt.tight_layout()
     plt.savefig("results/confusion_matrices_with_labels.png")
-    plt.show()
 
     # === Print Confusion Matrices ===
     print("\nConfusion Matrices:")
@@ -242,3 +241,47 @@ if __name__ == "__main__":
     print(f"Linear Regression Accuracy: {linear_accuracy * 100:.2f}%")
     print(f"Logistic Regression Accuracy: {logistic_accuracy * 100:.2f}%")
     print(f"SVM Accuracy: {svm_accuracy * 100:.2f}%")
+
+    # === Feature Importance Visualization ===
+    feature_names = [
+        "Gender",
+        "Study Hours Per Week",
+        "Attendance Rate",
+        "Previous Exam Scores",
+        "Parental Education Level",
+        "Internet Access at Home",
+        "Extracurricular Activities",
+        "Final Exam Score",
+    ]
+
+    # Linear Regression Feature Importance
+    linear_coefficients = linear_model.weights
+    plt.figure(figsize=(10, 6))
+    plt.bar(feature_names, linear_coefficients, color="blue", alpha=0.7)
+    plt.title("Feature Importance - Linear Regression")
+    plt.xlabel("Features")
+    plt.ylabel("Coefficient Value")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig("results/linear_feature_importance.png")
+
+    # Logistic Regression Feature Importance
+    logistic_coefficients = logistic_model.weights
+    plt.figure(figsize=(10, 6))
+    plt.bar(feature_names, logistic_coefficients, color="green", alpha=0.7)
+    plt.title("Feature Importance - Logistic Regression")
+    plt.xlabel("Features")
+    plt.ylabel("Coefficient Value")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig("results/logistic_feature_importance.png")
+
+    svm_coefficients = svm_model.weights  # Use weights instead of coefficients
+    plt.figure(figsize=(10, 6))
+    plt.bar(feature_names, svm_coefficients, color="red", alpha=0.7)
+    plt.title("Feature Importance - SVM")
+    plt.xlabel("Features")
+    plt.ylabel("Coefficient Value")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig("results/svm_feature_importance.png")
