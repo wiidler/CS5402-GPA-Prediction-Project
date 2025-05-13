@@ -276,7 +276,7 @@ if __name__ == "__main__":
     plt.tight_layout()
     plt.savefig("results/logistic_feature_importance.png")
 
-    svm_coefficients = svm_model.weights  # Use weights instead of coefficients
+    svm_coefficients = svm_model.weights
     plt.figure(figsize=(10, 6))
     plt.bar(feature_names, svm_coefficients, color="red", alpha=0.7)
     plt.title("Feature Importance - SVM")
